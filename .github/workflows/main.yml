@@ -28,7 +28,7 @@ jobs:
 
     - name: Check Repo 
       run: |
-        python3 check.py > README.md
+        python3 check.py 
 
     - name: Commit updates to README.md
       run: |
