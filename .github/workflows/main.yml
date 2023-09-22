@@ -28,7 +28,8 @@ jobs:
 
     - name: Check Repo 
       run: |
-        python3 check.py 
+        test -f README.md && rm README.md
+        python3 check.py >> README.md
 
     - name: Commit updates to README.md
       run: |
