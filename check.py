@@ -12,6 +12,7 @@ try:
     print("| -------- | -------- | ")
     os.system('sleep 1s')
     subprocess.call(['python', 'bin/geturl.py'])
+    os.system('sleep 1s')
     os.system('bash bin/checkurl | grep 301')
     os.system('bash bin/checkurl | grep 404')
 

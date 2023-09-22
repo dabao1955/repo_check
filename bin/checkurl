@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+sleep 1s
+
 while read url
 do
     url=${url%$'\n'}
