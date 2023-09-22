@@ -24,16 +24,9 @@ jobs:
         python-version: '3.11'
 
     - name: Download Repos.json
-      run: wget https://github.com/tiann/KernelSU/raw/main/website/docs/repos.json
+      run: wget https://github.com/tiann/KernelSU/raw/main/website/docs/repos.json bin/
 
-    - name: Get Repo
-      run: python3 geturl.py
-
-    - name: Check Repo for 404 Pages
+    - name: Check Repo 
       run: |
-        bash checkurl | grep 404
+        python3 check.py
 
-    - name: Check Repo for 301 Pages
-      run: |
-        bash checkurl | grep 301
-        
