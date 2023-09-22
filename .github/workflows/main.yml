@@ -35,6 +35,7 @@ jobs:
         rm -rf repos.json repos.txt
         git config user.name "dabao1955"
         git config user.email "dabao1955@163.com"
+        git config --global --add safe.directory /github/workspace
         git add .
         git commit -am "Sync Repo Status on $(date)"
 
