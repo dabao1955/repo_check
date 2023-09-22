@@ -32,12 +32,11 @@ jobs:
 
     - name: Commit updates to README.md
       run: |
-        export DAT=date '+%Y-%m-%dT%H:%M:%S'
         rm -rf repos.json repos.txt
         git config user.name "dabao1955"
         git config user.email "dabao1955@163.com"
         git add .
-        git commit -am "Sync Repo Status on $DAT"
+        git commit -am "Sync Repo Status on $date"
 
     - name: GitHub Push
       uses: ad-m/github-push-action@v0.5.0
