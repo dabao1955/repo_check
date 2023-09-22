@@ -1,4 +1,4 @@
-name: Check Repo
+name: ci
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
         python-version: '3.11'
 
     - name: Download Repos.json
-      run: wget https://github.com/tiann/KernelSU/raw/main/website/docs/repos.json bin/
+      run: wget -O /bin/repos.json https://github.com/tiann/KernelSU/raw/main/website/docs/repos.json
 
     - name: Check Repo 
       run: |
