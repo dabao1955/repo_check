@@ -14,8 +14,7 @@ with open("README.md", "w+", encoding="utf-8") as f:
         print(" | repo url | repo status |")
         print(" | -------- | -------- | ")
         subprocess.call(['python', 'bin/geturl.py'])
-        os.system('bash bin/checkurl | grep 301 >> README.md')
-        os.system('bash bin/checkurl | grep 404 >> README.md')
+        os.system('bash bin/checkurl >> README.md')
 
     finally:
         sys.stdout = sys.__stdout__

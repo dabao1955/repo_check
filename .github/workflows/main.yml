@@ -29,7 +29,10 @@ jobs:
     - name: Check Repo 
       run: |
         test -f README.md && rm README.md
+        test -f broken_repo_url.log && rm broken_repo_url.log
         python3 check.py 
+        bash bin/checkurl | grep 301 > broken_repo_url.log
+        bash bin/checkurl | grep 404 >> broken_repo_url.log
 
     - name: Commit updates to README.md
       run: |
