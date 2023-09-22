@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eu
+
+while read url
+do
+    url=${url%$'\n'}
+    status=$(curl -Is "$url" | head -1)
+    echo "$url $status"
+done < repos.txt
+
