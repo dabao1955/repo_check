@@ -1,0 +1,6 @@
+# KernelSU repo status
+
+Updated on 2023-09-22T16:29:32
+
+| repo url | repo status |
+
