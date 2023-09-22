@@ -1,12 +1,6 @@
 #!/bin/bash
 set -eu
 
-echo "# KernelSU repo status"
-echo
-echo "Updated on $(date '+%Y-%m-%dT%H:%M:%S')"
-echo
-echo "| repo url | repo status |"
-
 while read url
 do
     url=${url%$'\n'}
