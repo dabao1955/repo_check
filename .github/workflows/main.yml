@@ -26,9 +26,6 @@ jobs:
     - name: Setup Env
       run: pip install requests
 
-    - name: Download Repos.json
-      run: wget https://github.com/tiann/KernelSU/raw/main/website/docs/repos.json
-
     - name: Check Repo 
       run: |
         test -f README.md && rm README.md
