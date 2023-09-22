@@ -1,0 +1,42 @@
+name: Generate Stats Images
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: "0 0,6,12,18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+
+    # Run using Python 3.8 for consistency and aiohttp
+    - name: Set up Python 
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        architecture: 'x64'
+        cache: 'pip'
+
+    - name: Download Repos.json
+      run: wget https://github.com/tiann/KernelSU/raw/main/website/docs/repos.json
+
+    - name: Get Repo
+      run: python3 geturl.py
+
+    - name: Check Repo for 404 Pages
+      run: |
+        bash checkurl | grep 404
+
+    - name: Check Repo for 301 Pages
+      run: |
+        bash checkurl | grep 301
+        
