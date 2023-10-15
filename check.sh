@@ -4,7 +4,7 @@ set -eu
 
 wget -q https://github.com/tiann/KernelSU/raw/main/website/docs/repos.json
 
-echo "# KernelSU repo status"
+echo "# Repo Check Status"
 echo
 echo "Updated on $(date '+%Y-%m-%dT%H:%M:%S')"
 echo
