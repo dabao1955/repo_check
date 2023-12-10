@@ -3,7 +3,7 @@ name: ci
 on:
   push:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "0 9,18 * * *"
   workflow_dispatch:
 
 permissions:
