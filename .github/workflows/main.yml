@@ -38,7 +38,7 @@ jobs:
         git config user.email "dabao1955@163.com"
         git config --global --add safe.directory /github/workspace
         git add .
-        git commit -am -s "Sync Repo Status on $(date)"
+        git commit -am "Sync Repo Status on $(date)" -s
 
     - name: GitHub Push
       uses: ad-m/github-push-action@master
